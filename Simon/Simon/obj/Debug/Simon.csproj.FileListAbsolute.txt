@@ -9,3 +9,14 @@ C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.e
 C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.pdb
 C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.exe.config
 C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.Simon.resources
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\bin\Debug\Simon.exe.config
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\bin\Debug\Simon.exe
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\bin\Debug\Simon.pdb
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.exe.config
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.Simon.resources
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.Properties.Resources.resources
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.exe
+C:\Users\Usuario\Desktop\SIMON\Simon\Simon\Simon\obj\Debug\Simon.pdb

@@ -23,7 +23,11 @@ namespace Simon
         public Simon()
         {
             InitializeComponent();
-
+        }
+        void btn_start_Click (object sender, EventArgs e)
+        {
+            
+            btn_start.Visible=false;
             timer1.Interval = 1000;
             timer1.Tick += Timer1_Tick;
 
@@ -34,7 +38,6 @@ namespace Simon
             mostrarPaso();
 
         }
-
         void agregarPaso()
         {
             patron.Add(rnd.Next(0, 4));
@@ -91,7 +94,8 @@ namespace Simon
 
         private void pbAmarillo_MouseClick(object sender, MouseEventArgs e)
         {
-            verificarClick(2);
+            verificarClick(2
+                );
         }
 
         private void pbAzul_MouseClick(object sender, MouseEventArgs e)

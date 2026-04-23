@@ -35,6 +35,7 @@
             this.pbVerde = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btn_start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbRojo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAmarillo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAzul)).BeginInit();
@@ -44,9 +45,10 @@
             // pbRojo
             // 
             this.pbRojo.Image = global::Simon.Properties.Resources.Rojo;
-            this.pbRojo.Location = new System.Drawing.Point(287, 12);
+            this.pbRojo.Location = new System.Drawing.Point(383, 15);
+            this.pbRojo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbRojo.Name = "pbRojo";
-            this.pbRojo.Size = new System.Drawing.Size(223, 223);
+            this.pbRojo.Size = new System.Drawing.Size(297, 274);
             this.pbRojo.TabIndex = 3;
             this.pbRojo.TabStop = false;
             this.pbRojo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbRojo_MouseClick);
@@ -56,9 +58,10 @@
             // pbAmarillo
             // 
             this.pbAmarillo.Image = global::Simon.Properties.Resources.Amarillo;
-            this.pbAmarillo.Location = new System.Drawing.Point(58, 241);
+            this.pbAmarillo.Location = new System.Drawing.Point(77, 297);
+            this.pbAmarillo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbAmarillo.Name = "pbAmarillo";
-            this.pbAmarillo.Size = new System.Drawing.Size(223, 223);
+            this.pbAmarillo.Size = new System.Drawing.Size(297, 274);
             this.pbAmarillo.TabIndex = 2;
             this.pbAmarillo.TabStop = false;
             this.pbAmarillo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbAmarillo_MouseClick);
@@ -68,9 +71,10 @@
             // pbAzul
             // 
             this.pbAzul.Image = global::Simon.Properties.Resources.Azul;
-            this.pbAzul.Location = new System.Drawing.Point(287, 241);
+            this.pbAzul.Location = new System.Drawing.Point(383, 297);
+            this.pbAzul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbAzul.Name = "pbAzul";
-            this.pbAzul.Size = new System.Drawing.Size(223, 223);
+            this.pbAzul.Size = new System.Drawing.Size(297, 274);
             this.pbAzul.TabIndex = 1;
             this.pbAzul.TabStop = false;
             this.pbAzul.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbAzul_MouseClick);
@@ -80,24 +84,40 @@
             // pbVerde
             // 
             this.pbVerde.Image = global::Simon.Properties.Resources.Verde;
-            this.pbVerde.Location = new System.Drawing.Point(58, 12);
+            this.pbVerde.Location = new System.Drawing.Point(77, 15);
+            this.pbVerde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbVerde.Name = "pbVerde";
-            this.pbVerde.Size = new System.Drawing.Size(223, 223);
+            this.pbVerde.Size = new System.Drawing.Size(297, 274);
             this.pbVerde.TabIndex = 0;
             this.pbVerde.TabStop = false;
             this.pbVerde.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbVerde_MouseClick);
             this.pbVerde.MouseEnter += new System.EventHandler(this.pbVerde_MouseEnter);
             this.pbVerde.MouseLeave += new System.EventHandler(this.pbVerde_MouseLeave);
             // 
+            // btn_start
+            // 
+            this.btn_start.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_start.Font = new System.Drawing.Font("Microsoft Himalaya", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_start.Location = new System.Drawing.Point(293, 262);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(166, 71);
+            this.btn_start.TabIndex = 4;
+            this.btn_start.Text = "START";
+            this.btn_start.UseVisualStyleBackColor = false;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
+            // 
             // Simon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 491);
+            this.ClientSize = new System.Drawing.Size(757, 604);
+            this.Controls.Add(this.btn_start);
             this.Controls.Add(this.pbRojo);
             this.Controls.Add(this.pbAmarillo);
             this.Controls.Add(this.pbAzul);
             this.Controls.Add(this.pbVerde);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Simon";
             this.Text = "Simon";
             ((System.ComponentModel.ISupportInitialize)(this.pbRojo)).EndInit();
@@ -116,6 +136,7 @@
         private System.Windows.Forms.PictureBox pbRojo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btn_start;
     }
 }
 
