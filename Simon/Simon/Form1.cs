@@ -154,7 +154,7 @@ namespace Simon
             else
             {
                 MessageBox.Show("Fin del juego. Tu puntaje fue: " + patron.Count);
-                Close();
+                btn_start.Visible = true;
             }
         }
 
