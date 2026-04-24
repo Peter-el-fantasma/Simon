@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,29 +13,16 @@ namespace Simon
     public partial class Simon : Form
     {
         static List<int> patron = new List<int>();
-        static List<int> patronfijo = new List<int>();
-        bool intro = true;
 
         Random rnd = new Random();
 
-        int iJ = 0;
-        int iM = 0;
+        int iJ= 0;
+        int iM= 0;
 
         int colorencendido = -1;
-
         public Simon()
         {
             InitializeComponent();
-        }
-
-        private void btn_start_Click(object sender, EventArgs e)
-        {
-            btn_start.Visible = false;
-
-            patronfijo = new List<int> { 0, 1, 3, 2, 0, 1 };
-
-            intro = true;
-            iM = 0;
 
             timer1.Interval = 1000;
             timer1.Tick += Timer1_Tick;
@@ -39,7 +30,9 @@ namespace Simon
             timer2.Interval = 500;
             timer2.Tick += Timer2_Tick;
 
-            timer1.Start();
+            agregarPaso();
+            mostrarPaso();
+
         }
 
         void agregarPaso()
@@ -53,58 +46,25 @@ namespace Simon
             timer1.Start();
         }
 
-        void prenderTodos()
+        private void Timer1_Tick(object sender, EventArgs e)
         {
-            pbVerde.Image = Properties.Resources.VerdeOn;
-            pbRojo.Image = Properties.Resources.RojoOn;
-            pbAmarillo.Image = Properties.Resources.AmarilloOn;
-            pbAzul.Image = Properties.Resources.AzulOn;
-        }
-
-        void apagarTodos()
-        {
-            pbVerde.Image = Properties.Resources.Verde;
-            pbRojo.Image = Properties.Resources.Rojo;
-            pbAmarillo.Image = Properties.Resources.Amarillo;
-            pbAzul.Image = Properties.Resources.Azul;
-        }
-
-        private async void Timer1_Tick(object sender, EventArgs e)
-        {
-            List<int> listaActual = intro ? patronfijo : patron;
-
-            if (iM < listaActual.Count)
+            if (iM < patron.Count)
             {
-                int i = listaActual[iM];
+                int i = patron[iM];
                 colorencendido = i;
 
                 if (i == 0) pbVerde.Image = Properties.Resources.VerdeOn;
                 else if (i == 1) pbRojo.Image = Properties.Resources.RojoOn;
                 else if (i == 2) pbAmarillo.Image = Properties.Resources.AmarilloOn;
                 else if (i == 3) pbAzul.Image = Properties.Resources.AzulOn;
-
+               
                 timer2.Start();
+
                 iM++;
             }
             else
             {
                 timer1.Stop();
-
-               
-                if (intro)
-                {
-                    prenderTodos();
-                    await Task.Delay(500);
-                    apagarTodos();
-
-                    intro = false;
-
-                    patron.Clear();
-                    iJ = 0;
-
-                    agregarPaso();
-                    mostrarPaso();
-                }
             }
         }
 
@@ -114,10 +74,10 @@ namespace Simon
             else if (colorencendido == 1) pbRojo.Image = Properties.Resources.Rojo;
             else if (colorencendido == 2) pbAmarillo.Image = Properties.Resources.Amarillo;
             else if (colorencendido == 3) pbAzul.Image = Properties.Resources.Azul;
-
             colorencendido = -1;
             timer2.Stop();
         }
+
 
         private void pbVerde_MouseClick(object sender, MouseEventArgs e)
         {
@@ -156,8 +116,10 @@ namespace Simon
                 MessageBox.Show("Fin del juego. Tu puntaje fue: " + patron.Count);
                 Close();
             }
-        }
 
+        }
+        
+        // Esto es pal Hover
         private void pbVerde_MouseEnter(object sender, EventArgs e)
         {
             pbVerde.Image = Properties.Resources.VerdeHover;
@@ -198,4 +160,4 @@ namespace Simon
             pbAzul.Image = Properties.Resources.Azul;
         }
     }
-} 
+}

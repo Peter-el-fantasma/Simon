@@ -1,0 +1,11 @@
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\bin\Debug\Simon.exe.config
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\bin\Debug\Simon.exe
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\bin\Debug\Simon.pdb
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.csproj.AssemblyReference.cache
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.Properties.Resources.resources
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.csproj.GenerateResource.cache
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.csproj.CoreCompileInputs.cache
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.exe
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.pdb
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.exe.config
+C:\Users\lucan\Desktop\Facultad\Programacion\Simon\Simon\Simon\obj\Debug\Simon.Simon.resources
