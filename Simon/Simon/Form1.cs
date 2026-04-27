@@ -23,6 +23,12 @@ namespace Simon
         {
             InitializeComponent();
 
+            nvl_1.Visible = false;
+            nvl_2.Visible = false;
+            nvl_3.Visible = false;
+            nvl_4.Visible = false;
+            lbl_corona.Visible = false;
+
             timer1.Interval = 1000;
             timer1.Tick += Timer1_Tick;
 
@@ -33,11 +39,19 @@ namespace Simon
         private void btn_start_Click(object sender, EventArgs e)
         {
             btn_start.Visible = false;
+            nvl_1.Visible = true;
+            nvl_2.Visible = false;
+            nvl_3.Visible = false;
+            nvl_4.Visible = false;
+
             resetJuego();
             patronfijo = new List<int> { 0, 1, 3, 2, 0, 1 };
 
             intro = true;
             iM = 0;
+
+            timer1.Interval = 1000;
+            timer2.Interval = 500;
 
             timer1.Start();
         }
@@ -54,6 +68,57 @@ namespace Simon
             timer2.Stop();
 
             apagarTodos();
+        }
+
+        bool Niveles()
+        {
+            if (patron.Count == 8 || patron.Count == 14 || patron.Count == 20 || patron.Count == 31)
+            {
+                timer1.Stop(); timer2.Stop();
+                patronfijo = new List<int> { 0, 1, 3, 2, 0, 1 };
+                intro = true;
+
+                if (patron.Count == 8)
+                {
+                    nvl_1.Visible = false;
+                    nvl_2.Visible = true;
+                    nvl_3.Visible = false;
+                    nvl_4.Visible = false;
+                    timer1.Interval = 800;
+                    timer2.Interval = 400;
+                    MessageBox.Show("Felicidades, usted pasó al 2do nivel");
+                }
+                else if (patron.Count == 14)
+                {
+                    nvl_1.Visible = false;
+                    nvl_2.Visible = false;
+                    nvl_3.Visible = true;
+                    nvl_4.Visible = false;
+                    timer1.Interval = 600;
+                    timer2.Interval = 300;
+                    MessageBox.Show("Felicidades, usted pasó al 3er nivel");
+                }
+                else if (patron.Count == 20)
+                {
+                    nvl_1.Visible = false;
+                    nvl_2.Visible = false;
+                    nvl_3.Visible = false;
+                    nvl_4.Visible = true;
+                    timer1.Interval = 400;
+                    timer2.Interval = 200;
+                    MessageBox.Show("Felicidades, usted pasó al 4to nivel");
+                }
+                else if (patron.Count == 31)
+                {
+                    timer1.Stop();
+                    timer2.Stop();
+                    MessageBox.Show("Felicidades, usted ganó el juego 🜲");
+                    btn_start.Visible = true;
+                    lbl_corona.Visible = true;
+                    return true;
+                }
+            }
+            return false;
         }
 
         void agregarPaso()
@@ -112,10 +177,11 @@ namespace Simon
 
                     intro = false;
 
-                    patron.Clear();
                     iJ = 0;
 
-                    agregarPaso();
+                    if (patron.Count == 0)
+                        agregarPaso();
+
                     mostrarPaso();
                 }
             }
@@ -163,6 +229,10 @@ namespace Simon
                 if (iJ == patron.Count)
                 {
                     iJ = 0;
+
+                    if (Niveles())
+                        return;
+
                     agregarPaso();
                     mostrarPaso();
                 }
