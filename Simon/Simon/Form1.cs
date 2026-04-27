@@ -22,24 +22,38 @@ namespace Simon
         public Simon()
         {
             InitializeComponent();
-        }
-
-        private void btn_start_Click(object sender, EventArgs e)
-        {
-            btn_start.Visible = false;
-
-            patronfijo = new List<int> { 0, 1, 3, 2, 0, 1 };
-
-            intro = true;
-            iM = 0;
 
             timer1.Interval = 1000;
             timer1.Tick += Timer1_Tick;
 
             timer2.Interval = 500;
             timer2.Tick += Timer2_Tick;
+        }
+
+        private void btn_start_Click(object sender, EventArgs e)
+        {
+            btn_start.Visible = false;
+            resetJuego();
+            patronfijo = new List<int> { 0, 1, 3, 2, 0, 1 };
+
+            intro = true;
+            iM = 0;
 
             timer1.Start();
+        }
+
+        void resetJuego()
+        {
+            patron.Clear();
+            iJ = 0;
+            iM = 0;
+            intro = true;
+            colorencendido = -1;
+
+            timer1.Stop();
+            timer2.Stop();
+
+            apagarTodos();
         }
 
         void agregarPaso()
@@ -90,7 +104,6 @@ namespace Simon
             {
                 timer1.Stop();
 
-               
                 if (intro)
                 {
                     prenderTodos();
@@ -141,6 +154,9 @@ namespace Simon
 
         void verificarClick(int color)
         {
+            if (iJ >= patron.Count)
+                return;
+
             if (color == patron[iJ])
             {
                 iJ++;
@@ -153,8 +169,13 @@ namespace Simon
             }
             else
             {
+                timer1.Stop();
+                timer2.Stop();
+
                 MessageBox.Show("Fin del juego. Tu puntaje fue: " + patron.Count);
+
                 btn_start.Visible = true;
+                resetJuego();
             }
         }
 
@@ -198,4 +219,4 @@ namespace Simon
             pbAzul.Image = Properties.Resources.Azul;
         }
     }
-} 
+}
